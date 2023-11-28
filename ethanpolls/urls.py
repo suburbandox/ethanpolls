@@ -18,10 +18,11 @@ from django.contrib import admin
 from django.http import HttpResponse
 
 from django.urls import include, path
-
+from polls.views import index_view
 def debug_view(request):
-    return HttpResponse("yow redrum")
+    return HttpResponse()
 urlpatterns = [
+    path("", index_view),
 
     path("__debug__/", include("debug_toolbar.urls")),
 
