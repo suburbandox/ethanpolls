@@ -23,6 +23,7 @@ def debug_view(request):
     return HttpResponse("yow redrum")
 urlpatterns = [
     path("", debug_view),
+    path("__debug__/", include("debug_toolbar.urls")),
 
     path("polls/", include("polls.urls")),
     path("admin/", admin.site.urls),
