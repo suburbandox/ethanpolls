@@ -6,8 +6,11 @@
     <title>Document</title>
 </head>
 <body>
-    <a href="/admin">Admin</a>
-    <a href="polls/">pull</a>
-    <a href="blog/">blog</a>
+
+<ul>
+    {% for post in posts %}
+        <li><a href="{{post.pk}}">{{ post.title }}</a></li>
+    {% endfor %}
+</ul>
 </body>
 </html>
