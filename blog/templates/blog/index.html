@@ -6,11 +6,12 @@
     <title>Document</title>
 </head>
 <body>
-
+    <button><a href="create">create blog post</a></button>
 <ul>
     {% for post in posts %}
         <li><a href="{{post.pk}}">{{ post.title }}</a></li>
     {% endfor %}
 </ul>
+
 </body>
 </html>

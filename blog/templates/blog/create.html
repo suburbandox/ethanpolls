@@ -1,0 +1,14 @@
+{% extends "blog/base.html"%}
+{% block content %}
+<h1>{{post.title}}</h1>
+<h1>{{post.textarea}}</h1>
+<form action="/blog/create" method="post">
+    {% csrf_token %} 
+    <label for="title">add post title</label>
+    <input type="text" id="title" name="title">
+    <label for="post">blog text</label>
+    <input type="text" id="post" name="textarea">
+    <input type="submit" value="Submit">
+</form>
+
+{% endblock %}
