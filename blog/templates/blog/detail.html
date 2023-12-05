@@ -2,5 +2,8 @@
 {% block content %}
 <h1>{{post.title}}</h1>
 <h1>{{post.textarea}}</h1>
+{% if post.last_updated %}
+    <p>Last updated {{ post.last_updated }}</p>
+{% endif %}
 <a href="edit"><button>Edit</button></a>
 {% endblock %}
