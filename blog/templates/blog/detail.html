@@ -4,6 +4,7 @@
 <h1>{{post.textarea}}</h1>
 {% if post.last_updated %}
     <p>Last updated {{ post.last_updated }}</p>
+    <p>Last edited by {{ post.user.username }} </p>
 {% endif %}
 <a href="edit"><button>Edit</button></a>
 {% endblock %}

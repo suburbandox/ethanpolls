@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class BlogPost(models.Model):
@@ -6,6 +7,7 @@ class BlogPost(models.Model):
     title = models.CharField(max_length=100)
     textarea =models.TextField()
     last_updated = models.DateTimeField(null=True)
+    user = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
 
     def __str__(self):
         return self.title

@@ -36,6 +36,7 @@ def blog_edit_view(request, pk):
         blog.title = request.POST.get('title')
         blog.textarea = request.POST.get('textarea')
         blog.last_updated = timezone.now()
+        blog.user = request.user
         blog.save()
         return HttpResponseRedirect(f"/blog/{pk}")
     else:
