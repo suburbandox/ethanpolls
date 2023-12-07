@@ -1,9 +1,11 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from .models import BlogPost
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.utils import timezone
-
+from django.contrib.auth.forms import UserCreationForm
+from django.urls import reverse_lazy
+from django.views import generic
 
 def blog_list_view(request):
     posts = BlogPost.objects.all()
@@ -39,3 +41,17 @@ def blog_edit_view(request, pk):
     else:
         context = {"blog": blog}
         return render(request, "blog/edit.html", context)
+
+
+def blog_signup_view(request):
+    if request.method == "POST":
+        print('post here', request.POST)
+        return HttpResponse('thx 4 signup')
+    else:
+        return render(request, "blog/signup.html")
+
+
+class SignUpView(generic.CreateView):
+    form_class = UserCreationForm
+    success_url = "/"
+    template_name = "blog/signup.html"

@@ -9,4 +9,5 @@ urlpatterns = [
     path("<int:pk>/",views.blog_detail_view),
     path("create",views.blog_create_view),
     path("<int:pk>/edit",views.blog_edit_view),
+    path("signup",views.SignUpView.as_view()),
 ]
