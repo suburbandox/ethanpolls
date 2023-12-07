@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
+from django.contrib.auth import logout
 from .models import BlogPost
 from django.http import HttpResponseRedirect, HttpResponse
 from django.utils import timezone
@@ -36,7 +37,8 @@ def blog_edit_view(request, pk):
         blog.title = request.POST.get('title')
         blog.textarea = request.POST.get('textarea')
         blog.last_updated = timezone.now()
-        blog.user = request.user
+        if request.user.is_authenticated:
+            blog.user = request.user
         blog.save()
         return HttpResponseRedirect(f"/blog/{pk}")
     else:
@@ -56,3 +58,8 @@ class SignUpView(generic.CreateView):
     form_class = UserCreationForm
     success_url = "/"
     template_name = "blog/signup.html"
+
+
+def logout_view(request):
+    logout(request)
+    return HttpResponseRedirect(f"/blog/")

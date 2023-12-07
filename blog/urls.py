@@ -10,4 +10,5 @@ urlpatterns = [
     path("create",views.blog_create_view),
     path("<int:pk>/edit",views.blog_edit_view),
     path("signup",views.SignUpView.as_view()),
+    path("logout",views.logout_view),
 ]
