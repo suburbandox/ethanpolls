@@ -39,6 +39,8 @@ def blog_edit_view(request, pk):
         blog.last_updated = timezone.now()
         if request.user.is_authenticated:
             blog.user = request.user
+        else:
+            blog.user = None
         blog.save()
         return HttpResponseRedirect(f"/blog/{pk}")
     else:
