@@ -26,6 +26,7 @@ def blog_create_view(request):
             title=request.POST.get("title"),
             textarea=request.POST.get("textarea"),
             date=timezone.now(),
+            user=request.user
         )
         return HttpResponseRedirect("/blog/")
     else:
