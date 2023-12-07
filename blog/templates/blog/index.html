@@ -5,6 +5,7 @@
     <tr>
         <th>blog title</th>
         <th>create date</th>
+        <th>last user</th>
     </tr>
     {% for post in posts %}
     <tr>
@@ -12,6 +13,7 @@
    
         <!-- <li><a href="{{post.pk}}/">{{ post.title }}</a></li> -->
         <td>{{post.date}}</td> 
+        <td>{{post.user}}</td>
     </tr>
     {% endfor %}
 </table>
