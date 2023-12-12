@@ -35,6 +35,7 @@ ALLOWED_HOSTS = ["*"]
 INSTALLED_APPS = [
     "polls.apps.PollsConfig",
     "blog.apps.BlogConfig",
+    "weather.apps.WeatherConfig",
 
     'django.contrib.admin',
     'django.contrib.auth',

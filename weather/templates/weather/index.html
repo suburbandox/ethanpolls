@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    {{response}}
+      <h1>weather!</h1>
+    <form action="">
+        <h1>lat</h1>
+        <input type="text" name="rat">
+        <h1>lon</h1>
+        <input type="text" name="atooi">
+        <input type="submit">
+    </form>
+    {% if temp != None %}
+    <h1>your temp in fahrenheit is {{temp}} &deg;F</h1>
+    {% endif %}
+ 
+</body>
+
+</html>
