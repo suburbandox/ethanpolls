@@ -8,6 +8,11 @@ from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
 from django.views import generic
 
+from django.views.generic import CreateView
+from django.contrib.auth import authenticate, login
+from  django.contrib.auth.models import User
+from django.shortcuts import redirect
+
 def blog_list_view(request):
     posts = BlogPost.objects.all()
     context = {"posts": posts}
@@ -49,19 +54,11 @@ def blog_edit_view(request, pk):
         return render(request, "blog/edit.html", context)
 
 
-def blog_signup_view(request):
-    if request.method == "POST":
-        print('post here', request.POST)
-        return HttpResponse('thx 4 signup')
-    else:
-        return render(request, "blog/signup.html")
-
-
 class SignUpView(generic.CreateView):
     form_class = UserCreationForm
-    success_url = "/"
+    success_url = "/accounts/login"
     template_name = "blog/signup.html"
-
+   
 
 def logout_view(request):
     logout(request)
