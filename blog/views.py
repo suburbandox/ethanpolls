@@ -8,13 +8,9 @@ from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
 from django.views import generic
 
-from django.views.generic import CreateView
-from django.contrib.auth import authenticate, login
-from  django.contrib.auth.models import User
-from django.shortcuts import redirect
 
 def blog_list_view(request):
-    posts = BlogPost.objects.all()
+    posts = BlogPost.objects.all().order_by("-date")
     context = {"posts": posts}
     return render(request, "blog/index.html", context)
 
@@ -44,9 +40,10 @@ def blog_edit_view(request, pk):
         blog.textarea = request.POST.get('textarea')
         blog.last_updated = timezone.now()
         if request.user.is_authenticated:
-            blog.user = request.user
+            blog.last_editor = request.user
         else:
-            blog.user = None
+            blog.last_editor = None
+        blog.full_clean()
         blog.save()
         return HttpResponseRedirect(f"/blog/{pk}")
     else:
