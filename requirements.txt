@@ -5,3 +5,4 @@ tzdata==2023.3
 django-colorfield==0.10.1
 django-debug-toolbar==4.2
 python-dotenv==1.0.0
+requests
