@@ -19,5 +19,4 @@ DJANGO_DEBUG=True
 create super user
 ```
 > python manage.py createsuperuser
-
 ```
