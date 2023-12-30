@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     "polls.apps.PollsConfig",
     "blog.apps.BlogConfig",
     "weather.apps.WeatherConfig",
+    "rawg.apps.RawgConfig",
 
     'django.contrib.admin',
     'django.contrib.auth',

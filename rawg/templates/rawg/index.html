@@ -1,0 +1,29 @@
+{% extends 'rawg/base.html' %}
+
+{% block content %}
+      <div class="row"style="display: flex; width: 80%; margin: 10px auto; flex-wrap: wrap; justify-content: center; ">
+        {% for result in   data.results%}
+        <!-- <div class="col-sm-6 mb-3 mb-sm-0 " >
+          <div class="card"style= width: 18rem>
+            <div class="card-body">
+               
+              <img src="{{ result.background_image }}" class="card-img-top" alt="...">
+              <h5 class="card-title">{{ result.name }}</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div> -->
+          <div class="card" style="width: 18rem; margin: 10px;">
+            <img src="{{ result.background_image }}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{ result.name }}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="card-link">Card link</a>
+              <a href="#" class="card-link">Another link</a>
+            </div>
+          </div>        
+      {% endfor %}
+      </div>
+{% endblock content %}

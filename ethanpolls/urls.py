@@ -29,6 +29,7 @@ urlpatterns = [
     path("polls/", include("polls.urls")),
     path("blog/", include("blog.urls")),
     path("weather/", include("weather.urls")),
+    path("games/", include("rawg.urls")),
 
     path("admin/", admin.site.urls),
     path("accounts/", include("django.contrib.auth.urls")),  # new
