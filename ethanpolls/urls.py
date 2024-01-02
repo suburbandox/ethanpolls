@@ -30,6 +30,8 @@ urlpatterns = [
     path("blog/", include("blog.urls")),
     path("weather/", include("weather.urls")),
     path("games/", include("rawg.urls")),
+    path("cocktails/", include("cocktails.urls")),
+
 
     path("admin/", admin.site.urls),
     path("accounts/", include("django.contrib.auth.urls")),  # new

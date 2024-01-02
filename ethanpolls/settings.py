@@ -13,6 +13,7 @@ import mimetypes
 import os
 from pathlib import Path
 from dotenv import load_dotenv
+import bleach
 mimetypes.add_type("application/javascript",".js")
 load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -37,6 +38,8 @@ INSTALLED_APPS = [
     "blog.apps.BlogConfig",
     "weather.apps.WeatherConfig",
     "rawg.apps.RawgConfig",
+    "cocktails.apps.CocktailsConfig",
+    'markdownify.apps.MarkdownifyConfig',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -140,3 +143,8 @@ INTERNAL_IPS = [
     # ...
 ]
 LOGIN_REDIRECT_URL = "/"
+MARKDOWNIFY = {
+    "default":{
+        "WHITELIST_TAGS":["h1",*bleach.sanitizer.ALLOWED_TAGS]
+    }
+}

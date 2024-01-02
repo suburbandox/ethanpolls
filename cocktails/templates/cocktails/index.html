@@ -1,0 +1,33 @@
+{% load static %}
+{% load markdownify %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'cocktails/style.css' %}">
+</head>
+<body>
+    {% for result in   data.results%}
+
+    <table>
+        <thead>
+            <th>name</th>
+            <th>spirit</th>
+            <th>root</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{result.name}}</td>
+                <td>{{result.primary_spirit}}</td>
+                <td>{{result.root_cocktail}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>{{result.recipe|safe}}</p>
+    {%endfor%}
+    
+</body>
+</html>
