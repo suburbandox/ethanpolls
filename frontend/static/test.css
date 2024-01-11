@@ -1,0 +1,19 @@
+.cocktail.card {
+    background-color: yellow;
+}
+.red
+{
+ 
+    margin: 10px auto;
+    justify-content: center;
+
+    background-color: aqua;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.wrapper {
+    width: 80%;
+    /* max-width: 1200px; */
+    margin: auto;
+}

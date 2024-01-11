@@ -31,7 +31,7 @@ urlpatterns = [
     path("weather/", include("weather.urls")),
     path("games/", include("rawg.urls")),
     path("cocktails/", include("cocktails.urls")),
-
+    path("frontend/", include("frontend.urls")),
 
     path("admin/", admin.site.urls),
     path("accounts/", include("django.contrib.auth.urls")),  # new
