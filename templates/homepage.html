@@ -1,18 +1,21 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="{% static 'home/style.css' %}">
 </head>
+
 <body>
-    <a href="/admin">Admin</a>
-    <a href="polls/">pull</a>
-    <a href="blog/">blog</a>
-    <a href="/blog/signup">signup</a>
-    <a href="/accounts/login">login</a>
-    <a href="/weather">weather</a>
-    <a href="/games">rawg</a>
-    <a href="/cocktails">cocktails</a>
+    <nav class="navbar">
+        <ul>
+            <li><a href="blog/">blog</a></li>
+            <li><a href="/blog/signup">signup</a></li>
+            <li> <a href="/accounts/login">login</a></li>
+        </ul>
+    </nav>
 </body>
 </html>
