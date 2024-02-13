@@ -8,7 +8,7 @@ async function reloadChats() {
     let  chats2  = json.chats
     let html = chats2.map(chat => `<div>${chat}</div>`).join('\n')
     chats.innerHTML = html
-    debugger
+
   }
     sendMessage.onclick = function () {
     const text = message.value
