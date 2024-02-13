@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     "cocktails.apps.CocktailsConfig",
     'markdownify.apps.MarkdownifyConfig',
     "frontend.apps.FrontendConfig",
-    
+    "chat.apps.ChatConfig",
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

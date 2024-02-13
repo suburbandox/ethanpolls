@@ -20,3 +20,4 @@ create super user
 ```
 > python manage.py createsuperuser
 ```
+python .\manage.py runserver

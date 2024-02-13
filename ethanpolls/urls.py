@@ -32,6 +32,7 @@ urlpatterns = [
     path("games/", include("rawg.urls")),
     path("cocktails/", include("cocktails.urls")),
     path("frontend/", include("frontend.urls")),
+    path("chat/", include("chat.urls")),
 
     path("admin/", admin.site.urls),
     path("accounts/", include("django.contrib.auth.urls")),  # new
