@@ -10,11 +10,17 @@ async function reloadChats() {
     chats.innerHTML = html
 
   }
-    sendMessage.onclick = function () {
+  function handleSubmit() {
     const text = message.value
     fetch(`/chat/create?message=${text}`)
     message.value= ""
   }
+    sendMessage.onclick = handleSubmit
+    message.onkeydown = function(evt) {
+        if (evt.key === 'Enter') {
+            handleSubmit()
+        }
+    }
 
   setInterval(() => {
     console.log(new Date())
