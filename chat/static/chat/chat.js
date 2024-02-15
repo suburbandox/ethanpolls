@@ -8,11 +8,11 @@ async function reloadChats() {
     let json = await response.json()
     let  chats2  = json.chats//.reverse()
       console.log(myname)
-      let html = chats2.map(chat => `<div>${myname}: ${chat}</div>`).join('\n')
+      let html = chats2.map(chat => `<div>${chat}</div>`).join('\n')
     chats.innerHTML = html
   }
   function handleSubmit() {
-    const text = message.value
+    const text =myname+": "+ message.value
     fetch(`/chat/create?message=${text}`)
     message.value= ""
     const myTimeout = setTimeout(bottom, 2000);
