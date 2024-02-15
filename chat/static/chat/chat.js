@@ -12,7 +12,7 @@ async function reloadChats() {
     chats.innerHTML = html
   }
   function handleSubmit() {
-    const text =myname+": "+ message.value
+    const text =myname.toString()+": "+ message.value
     fetch(`/chat/create?message=${text}`)
     message.value= ""
     const myTimeout = setTimeout(bottom, 2000);
