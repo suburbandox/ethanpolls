@@ -7,13 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    #chats{
+        width: 200px; /* Set your preferred width */
+        height: 200px; /* Set your preferred height */
+        overflow: auto; /* Add scrollbar when necessary */
+        border: 1px solid #ccc; /* Optional: Add border for visibility */
+    }
+</style>
 
 <body>
     <h1>Hello chat</h1>
     <input type="hidden" id="username" value="{{user.username}}">
 
-    <input id="message" type="text">
-    <button id="sendMessage">send</button>
+
 
     <div id="chats">
         {% for chat in chats %}
@@ -22,7 +29,8 @@
         </div>
         {% endfor %}
     </div>
-
+    <input id="message" type="text">
+    <button id="sendMessage">send</button>
     <!-- <div id="messeges">
         <div >{{request.user.username }}</div>
     </div>
