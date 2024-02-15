@@ -17,10 +17,11 @@
 </style>
 
 <body>
-    <h1>Hello chat</h1>
+    <h1>Hello add your name here</h1>
+    <label for="nickname"></label>
     <input type="hidden" id="username" value="{{user.username}}">
 
-
+    <input type="text" id="nickname" onchange="namechange()">
 
     <div id="chats">
         {% for chat in chats %}

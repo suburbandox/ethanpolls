@@ -1,12 +1,14 @@
  const message = document.getElementById("message")
  const sendMessage = document.getElementById("sendMessage")
  const chats = document.getElementById("chats")
-
+ const nickname = document.getElementById("nickname")
+ let myname = "anonymous"
 async function reloadChats() {
     let response = await fetch('/chat/chats')
     let json = await response.json()
     let  chats2  = json.chats//.reverse()
-    let html = chats2.map(chat => `<div>${chat}</div>`).join('\n')
+      console.log(myname)
+      let html = chats2.map(chat => `<div>${myname}: ${chat}</div>`).join('\n')
     chats.innerHTML = html
   }
   function handleSubmit() {
@@ -23,6 +25,10 @@ async function reloadChats() {
     }
     function bottom(){
       chats.scrollTop=chats.scrollHeight
+    }
+    function namechange(){
+      //console.log(myname)
+      myname = nickname.value
     }
 
   setInterval(() => {
