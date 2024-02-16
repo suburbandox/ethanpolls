@@ -4,13 +4,29 @@
  const nickname = document.getElementById("nickname")
  let myname = "anonymous"
 async function reloadChats() {
-    let response = await fetch('/chat/chats')
-    let json = await response.json()
-    let  chats2  = json.chats//.reverse()
-      console.log(myname)
-      let html = chats2.map(chat => `<div>${chat}</div>`).join('\n')
-    chats.innerHTML = html
-  }
+  let response = await fetch('/chat/chats')
+  let json = await response.json()
+  let chats2 = json.chats//.reverse()
+  console.log(chats)
+  console.log(chats2)
+  console.log(myname)
+    //let html = chats2.map(chat => `<div>${chat}</div>`).join('\n')
+  //   let html = chats2.map( unhax)
+  // chats.innerHTML = html
+  chats.innerHTML = ''
+  chats2.forEach(chat => {
+    console.log(55)
+    const listItem = document.createElement("div");
+    listItem.classList.add("chat")
+    listItem.innerText = chat;
+    chats.appendChild(listItem);
+  });
+
+}
+function unhax(chat){
+  let c = chat.innerText
+  return c
+}
   function handleSubmit() {
     const text =myname.toString()+": "+ message.value
     fetch(`/chat/create?message=${text}`)
